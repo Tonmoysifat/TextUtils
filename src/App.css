@@ -26,6 +26,8 @@
 
 .App-link {
   color: #61dafb;
+  list-style: none;
+  padding: 0 15px;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +38,40 @@
     transform: rotate(360deg);
   }
 }
+.nav-par{
+  display: flex;
+}
+
+/* .placeHolder::placeholder{
+  color: white;
+} */
+/* .placeHolder{
+  color: white;
+} */
+.active{
+  color: red !important;
+  /* text-decoration: none !important; */
+}
+
+/* label.form-check-label{
+  border: 1px solid #071031;
+    background-color: #071031;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+label.greenbtn{
+  border: 1px solid #320942;
+    background-color: #320942;
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.form-check.form-switch{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+} */
