@@ -9,6 +9,9 @@ import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 
 function App() {
+//   if (localStorage.getItem("Theme") == null) {
+//     localStorage.setItem("Theme", "light");
+// }
   const [mode, setMode] = useState("light");
   // const [mode_2, setMode_2] = useState("light");
   const [alert, setAlert] = useState(null);
@@ -54,7 +57,7 @@ function App() {
         <Navbar mode={mode} darkModeToggle={darkModeToggle} />
         {/* <Navbar mode={mode} mode_2={mode_2} darkModeToggle={darkModeToggle} darkModeToggle_2={darkModeToggle_2} /> */}
         <Alert alert={alert} />
-        <div className="container my-5 py-5">
+        <div className="container my-4">
           <Routes>
             <Route
               path="/"

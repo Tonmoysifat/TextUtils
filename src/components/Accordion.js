@@ -2,12 +2,18 @@ import React from "react";
 
 
 export default function Accordion(props) {
+  let mystyle={
+    color:props.mode==="dark"?"white":"black",
+    backgroundColor:props.mode==="dark"?"#3b3e40cc":"white",
+    borderColor:props.mode==="dark"?"grey":"grey"
+
+  }
 
 return (
   <div className="container"  style={{color:props.mode==="dark"?"white":"black"}}>
     <h2 className="my-3">About Us</h2>
     <div className="accordion" id="accordionExample">
-      <div className="accordion-item"  style={{backgroundColor:props.mode==="dark"?"#3b3e40cc":"white",borderColor:props.mode==="dark"?"grey":"grey",color:props.mode==="dark"?"white":"black"}}>
+      <div className="accordion-item"  style={mystyle}>
         <h2 className="accordion-header" >
           <button
             className="accordion-button"
@@ -16,7 +22,7 @@ return (
             data-bs-target="#collapseOne"
             aria-expanded="true"
             aria-controls="collapseOne"
-            style={{backgroundColor:props.mode==="dark"?"#3b3e40cc":"white",borderColor:props.mode==="dark"?"grey":"grey",color:props.mode==="dark"?"white":"black"}}
+            style={mystyle}
             
           >
             Accordion Item #1
@@ -39,7 +45,7 @@ return (
           </div>
         </div>
       </div>
-      <div className="accordion-item"  style={{backgroundColor:props.mode==="dark"?"#3b3e40cc":"white",borderColor:props.mode==="dark"?"grey":"grey",color:props.mode==="dark"?"white":"black"}}>
+      <div className="accordion-item" style={mystyle}>
         <h2 className="accordion-header">
           <button
             className="accordion-button collapsed"
@@ -48,7 +54,7 @@ return (
             data-bs-target="#collapseTwo"
             aria-expanded="false"
             aria-controls="collapseTwo"
-            style={{backgroundColor:props.mode==="dark"?"#3b3e40cc":"white",borderColor:props.mode==="dark"?"grey":"grey",color:props.mode==="dark"?"white":"black"}}
+            style={mystyle}
           >
             Accordion Item #2
           </button>
@@ -70,7 +76,7 @@ return (
           </div>
         </div>
       </div>
-      <div className="accordion-item"  style={{backgroundColor:props.mode==="dark"?"#3b3e40cc":"white",borderColor:props.mode==="dark"?"grey":"grey",color:props.mode==="dark"?"white":"black"}}>
+      <div className="accordion-item"  style={mystyle}>
         <h2 className="accordion-header">
           <button
             className="accordion-button collapsed"
@@ -79,7 +85,7 @@ return (
             data-bs-target="#collapseThree"
             aria-expanded="false"
             aria-controls="collapseThree"
-            style={{backgroundColor:props.mode==="dark"?"#3b3e40cc":"white",borderColor:props.mode==="dark"?"grey":"grey",color:props.mode==="dark"?"white":"black"}}
+            style={mystyle}
           >
             Accordion Item #3
           </button>
