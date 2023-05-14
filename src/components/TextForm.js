@@ -129,19 +129,19 @@ export default function TextForm(props) {
             Convert to UpperCase
           </button>
           <button
-            className="btn btn-primary ms-2 mt-3 text-center"
+            className="btn btn-primary ms-3 mt-3 text-center"
             onClick={convertToLowerCase}
           >
             Convert to LowerCase
           </button>
           <button
-            className="btn btn-primary ms-2 mt-3 text-center"
+            className="btn btn-primary ms-3 mt-3 text-center"
             onClick={convertSentenceCase}
           >
             Convert to SentenceCase
           </button>
           <button
-            className="btn btn-primary ms-2 mt-3 text-center"
+            className="btn btn-primary ms-3 mt-3 text-center"
             onClick={copyToClipBoard}
           >
             Copy Text
