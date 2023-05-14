@@ -157,7 +157,7 @@ export default function TextForm(props) {
         <p>
           {/* {text.trim() !== "" ? text.trim().split(" ").length : 0} words and{" "}
           {text.length} characters */}
-          {text.split(" ").filter((element)=>{return element.length!==0}). length} words and {text.length} characters
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
         </p>
         <p>
           {0.008 * (text.trim() !== "" ? text.trim().split(" ").length : 0)}{" "}
