@@ -15,12 +15,12 @@ function Alert(props) {
           role="alert"
         >
           {capitalize(props.alert.type)} :<strong>{props.alert.message}</strong>
-          <button
+          {/* <button
             type="button"
             className="btn-close"
             data-bs-dismiss="alert"
             aria-label="Close"
-          ></button>
+          ></button> */}
         </div>}
       
       </div>

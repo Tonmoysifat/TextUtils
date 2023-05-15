@@ -53,10 +53,10 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Navbar title="TextUtils" nav_link_1="Home" nav_link_2="About Us"/> */}
         <Navbar mode={mode} darkModeToggle={darkModeToggle} />
         {/* <Navbar mode={mode} mode_2={mode_2} darkModeToggle={darkModeToggle} darkModeToggle_2={darkModeToggle_2} /> */}
         <Alert alert={alert} />
+        {/* <Navbar title="TextUtils" nav_link_1="Home" nav_link_2="About Us"/> */}
         <div className="container my-4">
           <Routes>
             <Route
@@ -75,6 +75,6 @@ function App() {
       </Router>
     </>
   );
-}
+};
 
 export default App;
