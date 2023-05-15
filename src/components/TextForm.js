@@ -9,16 +9,18 @@ export default function TextForm(props) {
       styleElement.id = "placeholderStyle";
       document.head.appendChild(styleElement);
     }
-    styleElement.innerHTML = "#exampleFormControlTextarea1::placeholder { color: white; }";
+    styleElement.innerHTML =
+      "#exampleFormControlTextarea1::placeholder { color: white; }";
   } else {
     if (!styleElement) {
       styleElement = document.createElement("style");
       styleElement.id = "placeholderStyle";
       document.head.appendChild(styleElement);
     }
-    styleElement.innerHTML = "#exampleFormControlTextarea1::placeholder { color: black; }";
+    styleElement.innerHTML =
+      "#exampleFormControlTextarea1::placeholder { color: black; }";
   }
- 
+
   const [text, setText] = useState("");
 
   const handleOnChange = (event) => {
@@ -80,6 +82,7 @@ export default function TextForm(props) {
         .writeText(text.value)
 
         .then(() => {
+          document.getSelection().removeAllRanges();
           props.showAlert("Text copied to clipboard", "success");
           console.log("Text copied to clipboard");
         })
@@ -87,6 +90,7 @@ export default function TextForm(props) {
     } else {
       try {
         var successful = document.execCommand("copy");
+        document.getSelection().removeAllRanges();
         if (successful) {
           console.log("Text copied to clipboard");
         } else {
@@ -104,10 +108,10 @@ export default function TextForm(props) {
         className="container"
         style={{ color: props.mode === "dark" ? "white" : "black" }}
       >
-        <h2 className="mb-3">{props.heading}</h2>
+        <h2 className="mb-4 text-center text-md-start">{props.heading}</h2>
         <div className="mb-3">
           <textarea
-            className="form-control"
+            className="form-control shadow"
             id="exampleFormControlTextarea1"
             rows="10"
             value={text}
@@ -115,36 +119,40 @@ export default function TextForm(props) {
             onChange={handleOnChange}
             style={{
               backgroundColor:
-                props.mode === "dark" ? "#2d3c464a" : "#3b3e4029",
+                props.mode === "dark" ? "#6960a3d6" : "#3b3e4029",
               borderColor: props.mode === "dark" ? "grey" : "grey",
               color: props.mode === "dark" ? "white" : "black",
             }}
           ></textarea>
         </div>
-        <div className="text-center text-md-start">
+        <div className="tbtn">
           <button
-            className="btn btn-primary ms-2 mt-3 text-center"
+            disabled={text.length === 0}
+            className="btn btn-primary  mt-3 "
             onClick={convertToUpperCase}
           >
-            Convert to UpperCase
+             UpperCase
           </button>
           <button
-            className="btn btn-primary ms-3 mt-3 text-center"
+            disabled={text.length === 0}
+            className="btn btn-primary ms-2 mt-3 "
             onClick={convertToLowerCase}
           >
-            Convert to LowerCase
+             LowerCase
           </button>
           <button
-            className="btn btn-primary ms-3 mt-3 text-center"
+            disabled={text.length === 0}
+            className="btn btn-primary ms-2 mt-3 "
             onClick={convertSentenceCase}
           >
-            Convert to SentenceCase
+             SentenceCase
           </button>
           <button
-            className="btn btn-primary ms-3 mt-3 text-center"
+            disabled={text.length === 0}
+            className="btn btn-primary ms-2 mt-3 "
             onClick={copyToClipBoard}
           >
-            Copy Text
+            CopyText
           </button>
         </div>
       </div>
@@ -157,7 +165,12 @@ export default function TextForm(props) {
         <p>
           {/* {text.trim() !== "" ? text.trim().split(" ").length : 0} words and{" "}
           {text.length} characters */}
-          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} characters
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words and {text.length} characters
         </p>
         <p>
           {0.008 * (text.trim() !== "" ? text.trim().split(" ").length : 0)}{" "}

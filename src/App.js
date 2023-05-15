@@ -33,7 +33,7 @@ function App() {
       form_check_label.innerHTML = "Disable dark mood";
       document.body.style.backgroundColor = "#071031";
       showAlert("Dark mode has been enabled", "success");
-      document.title = "TextUtils/Dark-mood";
+      // document.title = "TextUtils/Dark-mood";
       // setInterval(() => {
       //   document.title="Install TextUtils"
       // }, 1500);
@@ -46,7 +46,7 @@ function App() {
       form_check_label.innerHTML = "Enable dark mood";
       document.body.style.backgroundColor = "#d6d6d685";
       showAlert("Dark mode has been disabled", "success");
-      document.title = "TextUtils";
+      // document.title = "TextUtils";
     }
   };
 
@@ -63,7 +63,7 @@ function App() {
               path="/"
               element={
                 <TextForm
-                  heading="Enter the text to analyze below"
+                  heading="Try TextUtils - Word counter, Character counter, Copy text"
                   mode={mode}
                   showAlert={showAlert}
                 />
