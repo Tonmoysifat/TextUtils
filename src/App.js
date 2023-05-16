@@ -9,11 +9,7 @@ import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 
 function App() {
-//   if (localStorage.getItem("Theme") == null) {
-//     localStorage.setItem("Theme", "light");
-// }
   const [mode, setMode] = useState("light");
-  // const [mode_2, setMode_2] = useState("light");
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
     setAlert({
@@ -24,13 +20,24 @@ function App() {
       setAlert(null);
     }, 2000);
   };
+  // const removeBodyClasses=()=>{
+  //   document.body.classList.remove("bg-light");
+  //   document.body.classList.remove("bg-dark");
+  //   document.body.classList.remove("bg-primary");
+  //   document.body.classList.remove("bg-danger");
+  //   document.body.classList.remove("bg-success");
+  //   document.body.classList.remove("bg-info");
+  // }
   const darkModeToggle = () => {
-    let form_check_label = document.querySelector(".form-check-label");
+    // removeBodyClasses();
+    // console.log(cls);
+    // document.body.classList.add("bg-"+cls)
+    // let form_check_label = document.querySelector(".form-check-label");
  
     if (mode === "light") {
       setMode("dark");
       // form_check_label.classList.add("text-light")
-      form_check_label.innerHTML = "Disable dark mood";
+      // form_check_label.innerHTML = "Disable dark mood";
       document.body.style.backgroundColor = "#071031";
       showAlert("Dark mode has been enabled", "success");
       // document.title = "TextUtils/Dark-mood";
@@ -43,7 +50,7 @@ function App() {
     } else {
       setMode("light");
       // form_check_label.classList.remove("text-light")
-      form_check_label.innerHTML = "Enable dark mood";
+      // form_check_label.innerHTML = "Enable dark mood";
       document.body.style.backgroundColor = "#d6d6d685";
       showAlert("Dark mode has been disabled", "success");
       // document.title = "TextUtils";
@@ -54,7 +61,6 @@ function App() {
     <>
       <Router>
         <Navbar mode={mode} darkModeToggle={darkModeToggle} />
-        {/* <Navbar mode={mode} mode_2={mode_2} darkModeToggle={darkModeToggle} darkModeToggle_2={darkModeToggle_2} /> */}
         <Alert alert={alert} />
         {/* <Navbar title="TextUtils" nav_link_1="Home" nav_link_2="About Us"/> */}
         <div className="container my-4">

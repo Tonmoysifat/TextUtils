@@ -1,9 +1,8 @@
 // import "../App.css";
 import React from "react";
 import PropTypes from "prop-types";
-import {Link, NavLink} from 'react-router-dom'
+import { Link, NavLink } from "react-router-dom";
 import classes from "../App.css";
-
 
 export default function Navbar(props) {
   return (
@@ -13,8 +12,9 @@ export default function Navbar(props) {
       >
         <div className="container">
           <Link className="navbar-brand" to="/">
-            {props.title}</Link>
-          
+            {props.title}
+          </Link>
+
           <button
             className="navbar-toggler"
             type="button"
@@ -29,29 +29,72 @@ export default function Navbar(props) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                {/* <a className="nav-link active" aria-current="page" href="/"> {props.nav_link_1}</a> */}
-              
-                <NavLink className={`nav-link ${(navInfo)=> (navInfo.isActive ? classes.active : "")}`} aria-current="page" to="/"> {props.nav_link_1}</NavLink>
-                
+                <NavLink
+                  className={`nav-link ${(navInfo) =>
+                    navInfo.isActive ? classes.active : ""}`}
+                  aria-current="page"
+                  to="/"
+                >
+                  {" "}
+                  {props.nav_link_1}
+                </NavLink>
               </li>
               <li className="nav-item">
-                {/* <a className="nav-link" href="/about.html">
+                <NavLink
+                  className={`nav-link ${(navInfo) =>
+                    navInfo.isActive ? classes.active : ""}`}
+                  aria-current="page"
+                  to="/about"
+                >
+                  {" "}
                   {props.nav_link_2}
-                </a> */}
-                  <NavLink className={`nav-link ${(navInfo)=> (navInfo.isActive ? classes.active : "")}`}  aria-current="page" to="/about"> {props.nav_link_2}</NavLink>
+                </NavLink>
               </li>
             </ul>
-            {/* <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form> */}
+            {/* <div className="d-flex">
+              <div
+                className="bg-primary rounded me-2"
+                onClick={() => {
+                  props.darkModeToggle("primary");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-danger rounded me-2"
+                onClick={() => {
+                  props.darkModeToggle("danger");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-success rounded me-2"
+                onClick={() => {
+                  props.darkModeToggle("success");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-info rounded me-2"
+                onClick={() => {
+                  props.darkModeToggle("info");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-light rounded me-2"
+                onClick={() => {
+                  props.darkModeToggle("light");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer",border:"2px solid grey" }}
+              ></div>
+              <div
+                className="bg-dark border-2 rounded me-2"
+                onClick={() => {
+                  props.darkModeToggle("dark");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+            </div> */}
 
             <div className="form-check form-switch">
               <input
@@ -61,24 +104,18 @@ export default function Navbar(props) {
                 aria-checked
                 id="flexSwitchCheckDefault"
                 onClick={props.darkModeToggle}
+                // onClick={() => {
+                //   props.darkModeToggle(null);
+                // }}
               />
-              <label className={`form-check-label text-${props.mode==="light"?"dark":"light"}`} htmlFor="flexSwitchCheckDefault">
-              Enable dark mood
-              {/* <label
-                className="form-check-label"
+              <label
+                className={`form-check-label text-${
+                  props.mode === "light" ? "dark" : "light"
+                }`}
                 htmlFor="flexSwitchCheckDefault"
-                onClick={props.darkModeToggle}
               >
-                
-               
-              </label> */}
-              {/* <label
-                className="form-check-label greenbtn"
-                htmlFor="flexSwitchCheckDefault"
-                onClick={props.darkModeToggle_2}
-              > */}
-                
-                
+                {/* Enable dark mood */}
+                {props.mode==="dark" ? "Disable dark mood":"Enable dark mood"}
               </label>
             </div>
           </div>
@@ -98,8 +135,3 @@ Navbar.defaultProps = {
   nav_link_1: "Home",
   nav_link_2: "About Us",
 };
-
-
-
-
-
